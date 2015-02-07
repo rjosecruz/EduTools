@@ -10,12 +10,21 @@
         <activity
             android:name=".MenuActivity"
             android:label="@string/app_name">
-            <intent-filter>
+        <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ajuste"
+            android:label="@string/title_activity_ajuste"></activity>
+        <activity
+            android:name=".clases"
+            android:label="@string/title_activity_clases"></activity>
+        <activity
+            android:name=".activacion"
+            android:label="@string/title_activity_activacion"></activity>
     </application>
 
 </manifest>

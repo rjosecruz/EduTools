@@ -1,6 +1,7 @@
 package com.datatecsolutions.edutools;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -60,12 +61,22 @@ public class MenuActivity extends ActionBarActivity
         switch (number) {
             case 1:
                 mTitle = getString(R.string.title_section1);
+                Intent i = new Intent(this, clases.class);
+                startActivity(i);
                 break;
             case 2:
                 mTitle = getString(R.string.title_section2);
+                Intent ia = new Intent(this, ajuste.class);
+                startActivity(ia);
                 break;
             case 3:
                 mTitle = getString(R.string.title_section3);
+                Intent iac = new Intent(this, activacion.class);
+                startActivity(iac);
+                break;
+            case 4:
+                mTitle = getString(R.string.title_section4);
+
                 break;
         }
     }

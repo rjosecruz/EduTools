@@ -9,6 +9,10 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_example">Example action</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Configuracion</string>
+    <string name="title_activity_ajuste">Ajuste</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_clases">Lista de Clases</string>
+    <string name="title_activity_activacion">Activacion</string>
 
 </resources>
