@@ -1,4 +1,4 @@
-package com.datatecsolutions.edutools;
+package com.datatecsolutions.edutools.modelo;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
