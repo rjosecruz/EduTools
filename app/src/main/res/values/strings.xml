@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">Edu Tools</string>
     <string name="title_section1">Clases</string>
     <string name="title_section2">Ajustes</string>
@@ -14,5 +13,4 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_clases">Lista de Clases</string>
     <string name="title_activity_activacion">Activacion</string>
-
 </resources>
