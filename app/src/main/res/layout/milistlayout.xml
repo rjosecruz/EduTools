@@ -11,10 +11,10 @@
         android:layout_alignParentTop="true"
         android:layout_marginRight="6dip"
         android:contentDescription="TODO"
-        android:src="@drawable/ic_launcher" />
+        android:src="@mipmap/ic_classroom" />
 
     <TextView
-        android:id="@+id/secondLine"
+        android:id="@+id/codigoasignatura"
         android:layout_width="fill_parent"
         android:layout_height="26dip"
         android:layout_alignParentBottom="true"
@@ -26,10 +26,10 @@
         android:textSize="12sp" />
 
     <TextView
-        android:id="@+id/firstLine"
+        android:id="@+id/nombreasignatura"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/secondLine"
+        android:layout_above="@id/nombreasignatura"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:layout_alignWithParentIfMissing="true"
