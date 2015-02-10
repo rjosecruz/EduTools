@@ -33,4 +33,14 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
         db.execSQL("create table notas_acumulativas(id_acumulativo integer, rne text, nota real)");
         db.execSQL("create table tipo_acumulativos(id_tipo_acumulativo integer primary key, descripcion text)");
     }
+
+    /**
+     * Realiza una consulta a la base de datos
+     *
+     * @param sqlquery recibe una consulta sql como parametro
+     */
+    public void consultar(String sqlquery) {
+
+
+    }
 }

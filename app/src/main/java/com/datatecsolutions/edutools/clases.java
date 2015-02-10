@@ -1,28 +1,36 @@
 package com.datatecsolutions.edutools;
 
-import android.app.ListActivity;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
+
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
+
+import com.datatecsolutions.edutools.modelo.EduToolsDb;
+
+import java.util.ArrayList;
 
 
 public class clases extends ActionBarActivity {
     private ListView list;
-    private String[] sistemas = {"Programacion I", "Base de Datos II", "Desarrollo de Software", "Sistemas Operativos", "Programacion II",
-            "Inteligencia Artificial", "Debian", "Mandriva", "Solaris", "Unix"};
+    private EduToolsDb baseDatos = new EduToolsDb(this);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clases);
         list = (ListView) findViewById(R.id.listaclases);
-        ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, sistemas);
+
+        ArrayList<String> res = consultar("select id_clase,nombre from clase");
+
+        //insertar();
+
+        ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, res);
         list.setAdapter(adaptador);
     }
 
@@ -30,7 +38,10 @@ public class clases extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
+
+
         getMenuInflater().inflate(R.menu.menu_clases, menu);
+
         return true;
     }
 
@@ -47,6 +58,30 @@ public class clases extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public ArrayList<String> consultar(String sqlQuery) {
+        ArrayList<String> resultado = new ArrayList<String>();
+        SQLiteDatabase db = baseDatos.getReadableDatabase();
+
+        Cursor datos;
+        datos = db.rawQuery(sqlQuery, null);
+        while (datos.moveToNext()) {
+            resultado.add(datos.getString(1));
+        }
+        return resultado;
+
+    }
+
+    public Cursor consultarColegio(String sqlQuery) {
+
+        SQLiteDatabase db = baseDatos.getReadableDatabase();
+
+        Cursor datos;
+        datos = db.rawQuery(sqlQuery, null);
+
+        return datos;
+
     }
 
 
