@@ -1,4 +1,4 @@
-package com.datatecsolutions.edutools;//Source file: C:\\Users\\DAVID\\Google Drive\\proyecto maestros\\Clases Java\\Persona.java
+package com.datatecsolutions.edutools.modelo;//Source file: C:\\Users\\DAVID\\Google Drive\\proyecto maestros\\Clases Java\\Persona.java
 
 
 public class Persona {
@@ -17,6 +17,6 @@ public class Persona {
     public Persona() {
 
     }
-   
+
 
 }
