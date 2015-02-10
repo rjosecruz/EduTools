@@ -14,5 +14,6 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_clases">Lista de Clases</string>
     <string name="title_activity_activacion">Activacion</string>
+    <string name="title_activity_activity_crear_acumulativo">Crear Acumulativo</string>
 
 </resources>

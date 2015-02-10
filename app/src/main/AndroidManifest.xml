@@ -10,7 +10,7 @@
         <activity
             android:name=".MenuActivity"
             android:label="@string/app_name">
-        <intent-filter>
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -18,13 +18,16 @@
         </activity>
         <activity
             android:name=".ajuste"
-            android:label="@string/title_activity_ajuste"></activity>
+            android:label="@string/title_activity_ajuste" />
         <activity
             android:name=".clases"
-            android:label="@string/title_activity_clases"></activity>
+            android:label="@string/title_activity_clases" />
         <activity
             android:name=".activacion"
-            android:label="@string/title_activity_activacion"></activity>
+            android:label="@string/title_activity_activacion" />
+        <activity
+            android:name=".activity_crear_acumulativo"
+            android:label="@string/title_activity_activity_crear_acumulativo"></activity>
     </application>
 
 </manifest>
