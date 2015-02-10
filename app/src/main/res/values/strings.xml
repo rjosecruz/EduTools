@@ -2,10 +2,13 @@
 <resources>
 
     <string name="app_name">Edu Tools</string>
-    <string name="title_section1">Asignaturas</string>
-    <string name="title_section2">Ajustes</string>
-    <string name="title_section3">Activación</string>
-    <string name="title_section4">Cerrar</string>
+    <string name="title_section1">Perfil</string>
+    <string name="title_section2">Acumulativos</string>
+    <string name="title_section3">Asistencia</string>
+    <string name="title_section4">Reportes</string>
+    <string name="title_section5">Ajustes</string>
+    <string name="title_section6">Salir</string>
+
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_example">Example action</string>
@@ -17,5 +20,10 @@
     <string name="title_activity_activity_crear_acumulativo">Crear Acumulativo</string>
     <string name="title_activity_crear_acumulativo">Crear Acumulativo</string>
     <string name="title_activity_asignaturas">Asignaturas</string>
+    <string-array name="accionClases">
+        <item>Crear</item>
+        <item>Modificar</item>
+        <item>Revisar</item>
+    </string-array>
 
 </resources>
