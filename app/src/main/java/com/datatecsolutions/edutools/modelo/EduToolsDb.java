@@ -4,6 +4,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.provider.Contacts;
 
 import java.util.Vector;
 
@@ -36,6 +37,7 @@ public class EduToolsDb extends SQLiteOpenHelper {
         db.execSQL("create table encargado_alumno(id_encargado integer,rne integer)");
         db.execSQL("create table docente(id_prof integer primary key,nombre text,apellido text,direccion text,telefono text,email text,id_sace text, pass_sace text)");
         db.execSQL("create table instituto(id_instituto integer primary key,nombre_instituto text)");
+        preCargar();
     }
 
     @Override
@@ -73,7 +75,17 @@ public class EduToolsDb extends SQLiteOpenHelper {
         db.execSQL("create table encargado_alumno(id_encargado integer,rne integer)");
         db.execSQL("create table docente(id_prof integer primary key,nombre text,apellido text,direccion text,telefono text,email text,id_sace text, pass_sace text)");
         db.execSQL("create table instituto(id_instituto integer primary key,nombre_instituto text)");
+        preCargar();
     }
+
+    public void preCargar() {
+        SQLiteDatabase db = getWritableDatabase();
+        db.execSQL("insert into tipo_acumulativos values(1,'Clase')");
+        db.execSQL("insert into tipo_acumulativos values(2,'Casa')");
+        db.execSQL("insert into tipo_acumulativos values(3,'Examen')");
+    }
+
+
 
 
 }

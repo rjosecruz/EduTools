@@ -1,0 +1,42 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="?android:attr/listPreferredItemHeight"
+    android:padding="6dip">
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="6dip"
+        android:contentDescription="TODO"
+        android:src="@mipmap/ic_classroom" />
+
+    <TextView
+        android:id="@+id/codigoasignatura"
+        android:layout_width="wrap_content"
+        android:layout_height="26dip"
+        android:ellipsize="marquee"
+        android:singleLine="true"
+        android:text="Codigo"
+        android:textSize="12sp"
+        android:layout_below="@+id/descripcionacumulativo"
+        android:layout_alignLeft="@+id/descripcionacumulativo"
+        android:layout_alignStart="@+id/descripcionacumulativo" />
+
+
+    <TextView
+        android:id="@+id/descripcionacumulativo"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignWithParentIfMissing="true"
+        android:gravity="center_vertical"
+        android:text="descripcion"
+        android:textSize="16sp"
+        android:layout_alignTop="@+id/icon"
+        android:layout_toRightOf="@+id/icon"
+        android:layout_toEndOf="@+id/icon" />
+
+
+</RelativeLayout>

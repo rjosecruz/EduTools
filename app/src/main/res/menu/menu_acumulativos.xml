@@ -1,0 +1,20 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.datatecsolutions.edutools.acumulativos">
+    <item
+        android:id="@+id/crear_acumulativo"
+        android:title="Crear Acumulativo"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/modificar_acumulativo"
+        android:title="Modificar Acumulativo"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/borrar_acumulativo"
+        android:title="Borrar Acumulativo"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+</menu>

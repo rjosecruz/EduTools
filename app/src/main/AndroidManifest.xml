@@ -33,7 +33,10 @@
             android:label="@string/title_activity_crear_acumulativo" />
         <activity
             android:name=".asignaturas"
-            android:label="@string/title_activity_asignaturas"></activity>
+            android:label="@string/title_activity_asignaturas" />
+        <activity
+            android:name=".acumulativos"
+            android:label="@string/title_activity_acumulativos"></activity>
     </application>
 
 </manifest>

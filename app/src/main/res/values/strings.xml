@@ -20,10 +20,17 @@
     <string name="title_activity_activity_crear_acumulativo">Crear Acumulativo</string>
     <string name="title_activity_crear_acumulativo">Crear Acumulativo</string>
     <string name="title_activity_asignaturas">Asignaturas</string>
-    <string-array name="accionClases">
-        <item>Crear</item>
-        <item>Modificar</item>
-        <item>Revisar</item>
+    <string-array name="parciales">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
     </string-array>
+    <string-array name="TipoAcum">
+        <item>Clase</item>
+        <item>Examen</item>
+
+    </string-array>
+    <string name="title_activity_acumulativos">Acumulativos</string>
 
 </resources>

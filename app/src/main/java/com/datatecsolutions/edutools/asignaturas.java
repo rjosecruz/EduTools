@@ -1,5 +1,6 @@
 package com.datatecsolutions.edutools;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.ActionBarActivity;
@@ -7,8 +8,12 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.datatecsolutions.edutools.modelo.EduToolsDb;
 import com.datatecsolutions.edutools.modelo.adaptadorListaAsignaturas;
@@ -29,12 +34,29 @@ public class asignaturas extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_asignaturas);
-
+        //guardar();
         list = (ListView) findViewById(R.id.listaasignaturas);
         NameValuePair[] datosLista = consultar("select id_clase,nombre from clase");
         miadaptador = new adaptadorListaAsignaturas(this, datosLista);
         list = (ListView) findViewById(R.id.listaasignaturas);
         list.setAdapter(miadaptador);
+
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapter, View view, int position, long arg) {
+                //Object listItem = list.getItemAtPosition(position);
+                String codigo_clase, nombre_asignatura;
+                TextView v = (TextView) view.findViewById(R.id.codigoasignatura);
+                TextView vasignatura = (TextView) view.findViewById(R.id.nombreasignatura);
+                //Toast.makeText(getApplicationContext(),v.getText().toString(),Toast.LENGTH_LONG).show();
+                codigo_clase = v.getText().toString();
+                nombre_asignatura = vasignatura.getText().toString();
+                Intent i = new Intent(getApplicationContext(), acumulativos.class);
+                i.putExtra("Codigo", codigo_clase);
+                i.putExtra("Asignatura", nombre_asignatura);
+                startActivity(i);
+            }
+        });
     }
 
 
@@ -78,6 +100,20 @@ public class asignaturas extends ActionBarActivity {
 
         return datosLista;
 
+    }
+
+    public void guardar() {
+        try {
+            SQLiteDatabase db = baseDatos.getWritableDatabase();
+            db.execSQL("Insert into clase(id_clase,nombre) values(1,'Informatica I')");
+            db.execSQL("Insert into clase(id_clase,nombre) values(2,'Informatica II')");
+            db.execSQL("Insert into clase(id_clase,nombre) values(3,'Progamacion Estructura II')");
+            db.execSQL("Insert into clase(id_clase,nombre) values(4,'Logica Formal')");
+            db.execSQL("Insert into clase(id_clase,nombre) values(4,'Base de Datos')");
+            db.execSQL("Insert into clase(id_clase,nombre) values(5,'Programacion de IA')");
+        } catch (android.database.sqlite.SQLiteException ex) {
+            Log.i("dataops_", ex.getMessage().toString());
+        }
     }
 
 
