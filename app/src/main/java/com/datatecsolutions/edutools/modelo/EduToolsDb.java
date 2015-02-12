@@ -22,7 +22,7 @@ public class EduToolsDb extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("create table alumnos(rne integer primary key, nombre text, apellido text, correo text,telefono text,sexo text,fechaNac text)");
-        db.execSQL("create table acumulativos(id_acumulativo integer primary key, id_seccion integer, descripcion text, id_tipo_acumulativo text,fecha text,valor real,id_clase text)");
+        db.execSQL("create table acumulativos(id_acumulativo integer autoincrement primary key, id_seccion integer, descripcion text, id_tipo_acumulativo text,fecha text,valor real,id_clase text)");
         db.execSQL("create table notas_acumulativas(id_acumulativo integer, rne text, nota real)");
         db.execSQL("create table tipo_acumulativos(id_tipo_acumulativo integer primary key, descripcion text)");
         db.execSQL("create table clase(id_clase integer primary key, nombre text)");
@@ -60,7 +60,7 @@ public class EduToolsDb extends SQLiteOpenHelper {
         db.execSQL("drop table if exists instituto");
 
         db.execSQL("create table alumnos(rne integer primary key, nombre text, apellido text, correo text,telefono text,sexo text,fechaNac text)");
-        db.execSQL("create table acumulativos(id_acumulativo integer primary key, id_seccion integer, descripcion text, id_tipo_acumulativo text,fecha text,valor real,id_clase text)");
+        db.execSQL("create table acumulativos(id_acumulativo integer autoincrement primary key, id_seccion integer, descripcion text, id_tipo_acumulativo text,fecha text,valor real,id_clase text)");
         db.execSQL("create table notas_acumulativas(id_acumulativo integer, rne text, nota real)");
         db.execSQL("create table tipo_acumulativos(id_tipo_acumulativo integer primary key, descripcion text)");
         db.execSQL("create table clase(id_clase integer primary key, nombre text)");
@@ -84,8 +84,6 @@ public class EduToolsDb extends SQLiteOpenHelper {
         db.execSQL("insert into tipo_acumulativos values(2,'Casa')");
         db.execSQL("insert into tipo_acumulativos values(3,'Examen')");
     }
-
-
 
 
 }

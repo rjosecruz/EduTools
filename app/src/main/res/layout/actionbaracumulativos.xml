@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="fill_parent"
+    android:layout_width="fill_parent">
+
+    <item
+        android:id="@+id/action_editar"
+        android:icon="@mipmap/ic_evaluacion"
+        android:title="Test" />
+
+    <item
+        android:id="@+id/action_editar"
+        android:icon="@mipmap/ic_editar"
+        android:title="Test" />
+
+    <item
+        android:id="@+id/action_eliminar"
+        android:icon="@mipmap/ic_borrar"
+        android:title="Test" />
+</menu>

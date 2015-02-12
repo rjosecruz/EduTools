@@ -14,15 +14,22 @@ public class Acumulativo {
     private String clase;
     private String seccion;
     private String tipo;
-    private Double valor = 0.0;
-    private char parcial;// los valores que puede tener aqui es I II III IV
-    protected Integer idAcumlativo;
+    private String valor;
+    private String parcial;// los valores que puede tener aqui es I II III IV
+    protected String idAcumlativo;
 
     /**
      * @roseuid 54C2A5A2017C
      */
     public Acumulativo() {
 
+    }
+
+    public Acumulativo(String xnombre, String xvalor, String xIdAcumulativo, String xParcial) {
+        this.nombre = xnombre;
+        this.valor = xvalor;
+        this.idAcumlativo = xIdAcumulativo;
+        this.parcial = xParcial;
     }
 
     /**
@@ -54,5 +61,15 @@ public class Acumulativo {
      */
     public void eliminarAcumulativo() {
 
+    }
+
+    public String getnombre() {
+
+        return this.nombre;
+    }
+
+    public String getId() {
+
+        return this.idAcumlativo;
     }
 }

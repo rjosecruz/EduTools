@@ -32,5 +32,6 @@
 
     </string-array>
     <string name="title_activity_acumulativos">Acumulativos</string>
+    <string name="SinDatos">Ultimo Elemento</string>
 
 </resources>

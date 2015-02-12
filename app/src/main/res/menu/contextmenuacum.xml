@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="fill_parent"
+    android:layout_width="fill_parent">
+
+    <item
+        android:id="@+id/evaluar"
+        android:title="Evaluar"
+        showAsAction="ifRoom"></item>
+    <item
+        android:id="@+id/editar"
+        android:title="Editar"
+        showAsAction="ifRoom"></item>
+    <item
+        android:id="@+id/eliminar"
+        android:title="Eliminar"
+        showAsAction="ifRoom"></item>
+</menu>

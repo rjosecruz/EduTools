@@ -11,7 +11,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginRight="6dip"
         android:contentDescription="TODO"
-        android:src="@mipmap/ic_classroom" />
+        android:src="@mipmap/ic_acumulativo" />
 
     <TextView
         android:id="@+id/codigoasignatura"

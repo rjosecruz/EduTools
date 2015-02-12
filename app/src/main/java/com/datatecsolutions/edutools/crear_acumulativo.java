@@ -56,6 +56,7 @@ public class crear_acumulativo extends ActionBarActivity {
 
         List<String> listTipoAcumulativo = new ArrayList<String>();
         listTipoAcumulativo.add("Clase");
+        listTipoAcumulativo.add("Casa");
         listTipoAcumulativo.add("Examen");
 
 
@@ -77,7 +78,6 @@ public class crear_acumulativo extends ActionBarActivity {
         dataAdapter.setDropDownViewResource
                 (android.R.layout.simple_spinner_dropdown_item);
         parcialesSpinner.setAdapter(dataAdapter);
-
 
 
     }
@@ -110,13 +110,14 @@ public class crear_acumulativo extends ActionBarActivity {
         ContentValues nuevoRegistro = new ContentValues();
         try {
 
-            nuevoRegistro.put("id_acumulativo", "rowid");
+            // nuevoRegistro.put("id_acumulativo", default);
             nuevoRegistro.put("id_seccion", codigo);
             nuevoRegistro.put("descripcion", String.valueOf(descripcion.getText()));
             nuevoRegistro.put("id_tipo_acumulativo", String.valueOf(tipoAcumulativoSpinner.getSelectedItem().toString()));
             nuevoRegistro.put("fecha", String.valueOf(fecha.getText()));
             nuevoRegistro.put("valor", String.valueOf(valor.getText()));
             nuevoRegistro.put("id_clase", codigo);
+            //nuevoRegistro.put("parcial",String.valueOf(parcialesSpinner.getSelectedItem().toString()));
             SQLiteDatabase db = baseDatos.getWritableDatabase();
             db.insert("acumulativos", null, nuevoRegistro);
             Toast.makeText(getApplicationContext(), "Datos Guardados", Toast.LENGTH_LONG).show();
