@@ -11,19 +11,21 @@ import com.datatecsolutions.edutools.R;
 
 import org.apache.http.NameValuePair;
 
+import java.util.ArrayList;
+
 /**
  * Created by reynaldo.cruz on 11/02/2015.
  */
 
-public class adaptadorListaAcumulativos extends ArrayAdapter {
+public class adaptadorListaAcumulativos extends ArrayAdapter<Acumulativo> {
     /*Hacemos que nuestra clase sea un ArrayAdapter extendiendo de la misma*/
 
     Activity context;
-    NameValuePair[] datos;
+    ArrayList<Acumulativo> datos;
     /*Creamos las variables necesarias para capturar el contexto y otra para capturar
      * los datos que se publicaran en la lista*/
 
-    public adaptadorListaAcumulativos(Activity context, NameValuePair[] datos) {
+    public adaptadorListaAcumulativos(Activity context, ArrayList<Acumulativo> datos) {
         super(context, R.layout.milistlayout, datos);
         this.context = context;
         this.datos = datos;
@@ -34,12 +36,16 @@ public class adaptadorListaAcumulativos extends ArrayAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = context.getLayoutInflater();
         View item = inflater.inflate(R.layout.milistaacumulativos, null);
+        Acumulativo miacum = miacum = getItem(position);
 
         TextView title = (TextView) item.findViewById(R.id.codigoasignatura);
-        title.setText(datos[position].getName());
+        title.setText(String.valueOf(miacum.getidAcumlativo()));
 
         TextView descrip = (TextView) item.findViewById(R.id.descripcionacumulativo);
-        descrip.setText(datos[position].getValue().toString());
+        descrip.setText(miacum.getNombre());
+
+        TextView valor = (TextView) item.findViewById(R.id.tValor);
+        valor.setText(String.valueOf(miacum.getValor()));
 
 
         return item;

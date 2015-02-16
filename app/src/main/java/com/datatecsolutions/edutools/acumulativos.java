@@ -17,6 +17,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.datatecsolutions.edutools.modelo.Acumulativo;
 import com.datatecsolutions.edutools.modelo.EduToolsDb;
 import com.datatecsolutions.edutools.modelo.adaptadorListaAcumulativos;
 
@@ -32,6 +33,7 @@ public class acumulativos extends ActionBarActivity {
     private ListView list;
     private adaptadorListaAcumulativos miadaptador;
     private EduToolsDb baseDatos = new EduToolsDb(this);
+    private Acumulativo acum = new Acumulativo(this);
     Bundle extras;
     String codigo, nombre;
     @Override
@@ -43,7 +45,8 @@ public class acumulativos extends ActionBarActivity {
         codigo = extras.getString("Codigo");
         nombre = extras.getString("Asignatura");
         list = (ListView) findViewById(R.id.listaAcumulativos);
-        NameValuePair[] datosLista = consultar("select id_acumulativo,descripcion from acumulativos where id_seccion=" + codigo);
+        ArrayList<Acumulativo> datosLista = acum.listarAcumulativos(Integer.parseInt(codigo));
+
         miadaptador = new adaptadorListaAcumulativos(this, datosLista);
         list = (ListView) findViewById(R.id.listaAcumulativos);
         list.setAdapter(miadaptador);

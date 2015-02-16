@@ -21,7 +21,7 @@ public class Acumulativo {
     private String tipo;
     private double valor;
     private int parcial;// los valores que puede tener aqui es I II III IV
-    protected int idAcumlativo;
+    private int idAcumlativo;
     String fecha;
     int idClase;
     Context context;
@@ -32,6 +32,7 @@ public class Acumulativo {
      */
     public Acumulativo(Context context) {
         this.context = context;
+        baseDatos = new EduToolsDb(context);
     }
 
     public Acumulativo(String xnombre, double xvalor, int xIdAcumulativo, int xParcial, Context context) {
@@ -96,13 +97,14 @@ public class Acumulativo {
         SQLiteDatabase db = baseDatos.getReadableDatabase();
         Cursor datos = db.rawQuery(query, null);
         if (datos.getCount() > 0) {
-            Acumulativo acum = new Acumulativo(context);
-            acum.setIdAcumlativo(datos.getInt(0));
-            acum.setNombre(datos.getString(2));
-            acum.setValor(datos.getDouble(6));
-            acum.setParcial(datos.getInt(8));
-            resultado.add(acum);
-
+            while (datos.moveToNext()) {
+                Acumulativo acum = new Acumulativo(context);
+                acum.setIdAcumlativo(datos.getInt(0));
+                acum.setNombre(datos.getString(2));
+                acum.setValor(datos.getDouble(5));
+                acum.setParcial(datos.getInt(7));
+                resultado.add(acum);
+            }
         }
 
 
