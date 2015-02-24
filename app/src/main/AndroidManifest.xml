@@ -17,17 +17,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ajuste"
-            android:label="@string/title_activity_ajuste" />
-        <activity
             android:name=".clases"
             android:label="@string/title_activity_clases" />
         <activity
             android:name=".activacion"
             android:label="@string/title_activity_activacion" />
-        <activity
-            android:name=".activity_crear_acumulativo"
-            android:label="@string/title_activity_activity_crear_acumulativo" />
+
         <activity
             android:name=".crear_acumulativo"
             android:label="@string/title_activity_crear_acumulativo" />
@@ -36,7 +31,10 @@
             android:label="@string/title_activity_asignaturas" />
         <activity
             android:name=".acumulativos"
-            android:label="@string/title_activity_acumulativos"></activity>
+            android:label="@string/title_activity_acumulativos" />
+        <activity
+            android:name=".evaluar"
+            android:label="Evaluar Acumulativos" />
     </application>
 
 </manifest>

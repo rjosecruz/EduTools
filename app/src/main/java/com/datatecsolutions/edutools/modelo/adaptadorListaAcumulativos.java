@@ -36,7 +36,7 @@ public class adaptadorListaAcumulativos extends ArrayAdapter<Acumulativo> {
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = context.getLayoutInflater();
         View item = inflater.inflate(R.layout.milistaacumulativos, null);
-        Acumulativo miacum = miacum = getItem(position);
+        Acumulativo miacum = getItem(position);
 
         TextView title = (TextView) item.findViewById(R.id.codigoasignatura);
         title.setText(String.valueOf(miacum.getidAcumlativo()));

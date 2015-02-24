@@ -3,9 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.datatecsolutions.edutools.crear_acumulativo">
     <item
-        android:id="@+id/guardar_acumulativo"
-        android:title="Guardar"
+        android:id="@+id/action_settings"
+        android:title="@string/action_settings"
         android:orderInCategory="100"
-        android:icon="@mipmap/ic_launcher"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="never" />
 </menu>

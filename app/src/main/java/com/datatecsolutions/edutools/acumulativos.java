@@ -34,8 +34,10 @@ public class acumulativos extends ActionBarActivity {
     private adaptadorListaAcumulativos miadaptador;
     private EduToolsDb baseDatos = new EduToolsDb(this);
     private Acumulativo acum = new Acumulativo(this);
+    int id;
     Bundle extras;
     String codigo, nombre;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +52,19 @@ public class acumulativos extends ActionBarActivity {
         miadaptador = new adaptadorListaAcumulativos(this, datosLista);
         list = (ListView) findViewById(R.id.listaAcumulativos);
         list.setAdapter(miadaptador);
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapter, View view, int position, long arg) {
+                //Object listItem = list.getItemAtPosition(position);
+
+
+                Intent i = new Intent(getApplicationContext(), evaluar.class);
+                i.putExtra("codigo", codigo);
+                startActivity(i);
+            }
+        });
+
+
         registerForContextMenu(list);
 
     }
@@ -57,30 +72,38 @@ public class acumulativos extends ActionBarActivity {
     public void onCreateContextMenu(ContextMenu menu, View v,
                                     ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
-
+        menu.setHeaderTitle("Opciones");
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.contextmenuacum, menu);
     }
 
+    @Override
     public boolean onContextItemSelected(MenuItem item) {
+        id = item.getItemId();
+        if (id == R.id.evaluar) {
+            Intent intent = new Intent(getApplication(), evaluar.class);
+            intent.putExtra("codigo", codigo);
+            startActivity(intent);
 
-        switch (item.getItemId()) {
-            case R.id.crear_acumulativo:
-
-                return true;
-            case R.id.editar:
-
-                return true;
-            default:
-                return super.onContextItemSelected(item);
         }
+        //lanzar(id);
+        return super.onContextItemSelected(item);
+
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_acumulativos, menu);
 
         return true;
+    }
+
+    public void lanzar(int miid) {
+        if (miid == R.id.evaluar) {
+            Intent intent = new Intent(getApplication(), evaluar.class);
+            startActivity(intent);
+        }
     }
 
     @Override
@@ -98,6 +121,7 @@ public class acumulativos extends ActionBarActivity {
             startActivity(i);
             //return true;
         }
+
 
         return super.onOptionsItemSelected(item);
     }
