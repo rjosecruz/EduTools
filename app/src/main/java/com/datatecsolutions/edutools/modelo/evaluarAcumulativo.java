@@ -18,21 +18,5 @@ public class evaluarAcumulativo {
         this.context = context;
     }
 
-    public ArrayList<Persona> listarEstudiante() {
-        SQLiteDatabase db = baseDatos.getReadableDatabase();
-        ArrayList<Persona> resultado = new ArrayList<>();
-        String sql = "select * from alumnos";
-        Cursor datos = db.rawQuery(sql, null);
-        Persona alumno = new Persona(context);
-        if (datos.getCount() > 0) {
-            while (datos.moveToNext()) {
-                alumno.setCodigo(datos.getString(0));
-                alumno.setPrimerNombre(datos.getString(1));
-                resultado.add(alumno);
-            }
-        }
-        return resultado;
-    }
-
 
 }

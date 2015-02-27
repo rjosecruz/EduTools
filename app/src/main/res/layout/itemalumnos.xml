@@ -45,6 +45,10 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:numeric="decimal"
-        android:singleLine="true" />
+        android:singleLine="true"
+        android:autoText="true"
+        android:clickable="true"
+        android:editable="true"
+        android:textAlignment="viewEnd" />
 
 </RelativeLayout>

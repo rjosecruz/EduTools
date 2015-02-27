@@ -3,6 +3,7 @@ package com.datatecsolutions.edutools;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Parcelable;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -51,15 +52,16 @@ public class acumulativos extends ActionBarActivity {
 
         miadaptador = new adaptadorListaAcumulativos(this, datosLista);
         list = (ListView) findViewById(R.id.listaAcumulativos);
+
         list.setAdapter(miadaptador);
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapter, View view, int position, long arg) {
                 //Object listItem = list.getItemAtPosition(position);
-
-
+                TextView v = (TextView) view.findViewById(R.id.codigoasignatura);
+                String codAcumulativo = v.getText().toString();
                 Intent i = new Intent(getApplicationContext(), evaluar.class);
-                i.putExtra("codigo", codigo);
+                i.putExtra("codigo", codAcumulativo);
                 startActivity(i);
             }
         });
@@ -102,7 +104,7 @@ public class acumulativos extends ActionBarActivity {
     public void lanzar(int miid) {
         if (miid == R.id.evaluar) {
             Intent intent = new Intent(getApplication(), evaluar.class);
-            startActivity(intent);
+            // startActivity(intent);
         }
     }
 
