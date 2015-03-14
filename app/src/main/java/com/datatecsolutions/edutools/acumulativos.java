@@ -14,7 +14,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,6 +38,7 @@ public class acumulativos extends ActionBarActivity {
     private EduToolsDb baseDatos = new EduToolsDb(this);
     private Acumulativo acum = new Acumulativo(this);
     int id;
+    private CheckBox ckselect;
     Bundle extras;
     String codigo, nombre;
 
@@ -68,6 +71,7 @@ public class acumulativos extends ActionBarActivity {
 
 
         registerForContextMenu(list);
+        ckselect = (CheckBox) findViewById(R.id.ckselectacumulativo);
 
     }
 
@@ -122,6 +126,15 @@ public class acumulativos extends ActionBarActivity {
             i.putExtra("nombre_clase", nombre);
             startActivity(i);
             //return true;
+        }
+        if (id == R.id.modificar_acumulativo) {
+
+            for (int x = 0; x < list.getCount(); x++) {
+                RelativeLayout itemLayout = (RelativeLayout) list.getChildAt(x);
+                CheckBox cb = (CheckBox) itemLayout.findViewById(R.id.ckselectacumulativo);
+                cb.setVisibility(View.GONE);
+
+            }
         }
 
 

@@ -8,18 +8,18 @@
     <string name="title_section4">Reportes</string>
     <string name="title_section5">Ajustes</string>
     <string name="title_section6">Salir</string>
-
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_example">Example action</string>
     <string name="action_settings">Configuracion</string>
     <string name="title_activity_ajuste">Ajuste</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="ajuste">AJUSTES</string>
     <string name="title_activity_clases">Lista de Clases</string>
     <string name="title_activity_activacion">Activacion</string>
     <string name="title_activity_activity_crear_acumulativo">Crear Acumulativo</string>
     <string name="title_activity_crear_acumulativo">Crear Acumulativo</string>
     <string name="title_activity_asignaturas">Asignaturas</string>
+
     <string-array name="parciales">
         <item>1</item>
         <item>2</item>
@@ -29,9 +29,23 @@
     <string-array name="TipoAcum">
         <item>Clase</item>
         <item>Examen</item>
-
     </string-array>
+
     <string name="title_activity_acumulativos">Acumulativos</string>
     <string name="SinDatos">Ultimo Elemento</string>
+
+    <string-array name="itemsdrawer">
+        <item>Perfil</item>
+        <item>Acumulativos</item>
+        <item>Asistencia</item>
+        <item>Reportes</item>
+        <item>Ajustes</item>
+        <item>Salir</item>
+    </string-array>
+
+    <string name="drawer_open">Abrir navigation drawer</string>
+    <string name="drawer_close">Cerrar navigation drawer</string>
+    <string name="headlines">Encabezados de</string>
+    <string name="title_activity_menu">MenuActivity</string>
 
 </resources>

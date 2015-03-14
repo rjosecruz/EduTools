@@ -47,5 +47,15 @@
         android:layout_alignRight="@+id/descripcionacumulativo"
         android:layout_alignEnd="@+id/descripcionacumulativo" />
 
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/ckselectacumulativo"
+        android:layout_alignBottom="@+id/codigoasignatura"
+        android:layout_alignRight="@+id/tValor"
+        android:layout_alignEnd="@+id/tValor"
+        android:visibility="invisible" />
+
 
 </RelativeLayout>

@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import com.datatecsolutions.edutools.R;
@@ -46,6 +47,12 @@ public class adaptadorListaAcumulativos extends ArrayAdapter<Acumulativo> {
 
         TextView valor = (TextView) item.findViewById(R.id.tValor);
         valor.setText(String.valueOf(miacum.getValor()));
+
+        CheckBox ck = (CheckBox) item.findViewById(R.id.ckselectacumulativo);
+
+
+        ck.setChecked(false);
+        ck.setVisibility(View.INVISIBLE);
 
 
         return item;
